@@ -43,7 +43,9 @@ set smartcase
 " Set appearances
 syntax enable
 set background=dark
-colorscheme ron
+colorscheme koehler
+
+set guifont=Monaco:h15
 
 " Set extra options when running in GUI mode
 if has("gui_running")
