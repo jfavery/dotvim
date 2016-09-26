@@ -1,6 +1,10 @@
 """"""""""
 " General
 """"""""""
+" Load plugins
+execute pathogen#infect() 
+
+" Setup terminal if needed
 set term=ansi 
 
 " Sets how many lines of history VIM has to remember
@@ -13,14 +17,17 @@ filetype indent on
 " Set to auto read when a file is changed from the outside
 set autoread
 
+" Add markdown files
 au BufRead,BufNewFile *.md set filetype=markdown
 
 """""""""""""""""""""
 " VIM user interface
 """""""""""""""""""""
-
 " Wrap on words
 set wrap linebreak
+
+" Attempt to indent code
+set smartindent
 
 " Ignore compiled files
 set wildignore=*.o,*~,*.pyc
@@ -46,6 +53,7 @@ set background=dark
 colorscheme koehler
 
 set guifont=Monaco:h15
+set tabstop=4
 
 " Set extra options when running in GUI mode
 if has("gui_running")
@@ -55,4 +63,7 @@ if has("gui_running")
     set guitablabel=%M\ %t
 endif
 
-
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugins
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set runtimepath^=~/.vim/bundle/ctrlp.vim
